@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4efe6" />
+    <meta
+      name="description"
+      content="Фитнес и массаж для женщин в Тирасполе: движение, нагрузка и восстановление в одном бережном подходе."
+    />
+    <title>Фитнес × Массаж — Светлана</title>
+    <link rel="icon" href="Assets/LogoSVG.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="Assets/fonts/SegmentAKeyTrial-Bold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">К основному содержанию</a>
+
+    <header class="site-header" aria-label="Главная навигация">
+      <a class="wordmark" href="#hero" aria-label="Светлана — на главную">
+        <svg
+          class="wordmark__symbol"
+          viewBox="0 0 296.29 172.31"
+          width="290"
+          height="166"
+          aria-hidden="true"
+        >
+          <path
+            class="wordmark__symbol-primary"
+            d="M239.33,64.27c-2.91-.73-11.54.26-11.54.26-9.78,1.44-20.89,9.85-26.02,14.34-11.91,10.42-24.93,27.8-37.62,43.72-5.43,6.82-10.8,13.37-15.99,19-.01,0-.02,0-.02-.02-.59.66-1.19,1.31-1.8,1.95-15.14,15.89-36.5,25.79-60.18,25.79-45.93,0-83.16-37.23-83.16-83.16S40.23,3,86.16,3c19.85,0,39.08,7.96,53.37,19.57l-15.69,18.79c-10.05-8.06-23.8-13.88-37.68-13.88-32.41,0-58.67,26.27-58.67,58.67s26.26,58.67,58.67,58.67c14.43,0,27.64-5.2,37.86-13.85.32-.26.63-.53.93-.8.22-.19.44-.38.66-.59,2.93-2.57,5.94-5.5,8.98-8.65,6.25-6.47,12.59-13.86,18.49-21.04,5.99-7.29,11.52-14.37,16-20.04,3.24-4.11,5.93-7.47,7.85-9.65,5.7-6.45,11.26-12.49,20.62-16.38,4.3-1.79,13.93-4.32,24.98-.84,9.62,3.02,14.89,8.55,16.8,11.29Z"
+          />
+          <path
+            class="wordmark__symbol-secondary"
+            d="M293.29,86.15c0,45.93-37.23,83.16-83.16,83.16-19.85,0-39.07-7.96-53.37-19.57l15.69-18.8c10.04,8.06,23.8,13.88,37.68,13.88,32.41,0,58.67-26.26,58.67-58.67s-26.26-58.67-58.67-58.67c-14.43,0-27.65,5.21-37.86,13.86-.31.26-.62.53-.93.8-.18.15-.35.31-.53.46-.04.04-.08.07-.12.12-2.93,2.57-5.95,5.5-8.99,8.66-6.24,6.47-12.59,13.86-18.49,21.04-5.99,7.29-11.52,14.37-15.99,20.04,0,0-.01,0,0,0-3.25,4.1-5.94,7.46-7.86,9.64-5.7,6.45-11.26,12.48-20.61,16.37-4.31,1.79-13.93,4.33-24.99.85-9.62-3.02-14.88-8.55-16.8-11.3,2.91.74,11.54-.25,11.54-.25,9.78-1.44,20.89-9.86,26.02-14.35,11.91-10.42,24.93-27.79,37.62-43.72,5.43-6.81,10.79-13.36,15.98-18.99t.02.02c.58-.66,1.19-1.31,1.8-1.95,15.15-15.89,36.51-25.79,60.19-25.79,45.93,0,83.16,37.23,83.16,83.15Z"
+          />
+        </svg>
+        <span class="wordmark__text">
+          <span class="wordmark__name">Светлана</span>
+          <span class="wordmark__descriptor">Фитнес × Массаж</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="#fitness">Фитнес</a>
+        <a href="#massage">Массаж</a>
+        <a href="#about">О Светлане</a>
+        <a href="#blog">Блог</a>
+        <a href="#locations">Локации</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="header-action" type="button" data-contact-open>
+          <span class="header-action__icon" aria-hidden="true">
+            <i data-lucide="send"></i>
+          </span>
+          <span>Написать</span>
+        </button>
+        <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню навигации">
+          <span class="mobile-nav-toggle__line" aria-hidden="true"></span>
+          <span class="mobile-nav-toggle__line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav-backdrop" hidden></div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильное меню" hidden>
+      <div class="mobile-nav__header">
+        <span class="mobile-nav__title">Навигация</span>
+        <button class="mobile-nav__close" type="button" aria-label="Закрыть меню">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-nav__links">
+        <a href="#fitness" class="mobile-nav__link">
+          <span class="mobile-nav__num">01</span>
+          <span class="mobile-nav__name">Фитнес и тренировки</span>
+        </a>
+        <a href="#massage" class="mobile-nav__link">
+          <span class="mobile-nav__num">02</span>
+          <span class="mobile-nav__name">Массаж и восстановление</span>
+        </a>
+        <a href="#about" class="mobile-nav__link">
+          <span class="mobile-nav__num">03</span>
+          <span class="mobile-nav__name">О Светлане</span>
+        </a>
+        <a href="#blog" class="mobile-nav__link">
+          <span class="mobile-nav__num">04</span>
+          <span class="mobile-nav__name">Журнал</span>
+        </a>
+        <a href="#locations" class="mobile-nav__link">
+          <span class="mobile-nav__num">05</span>
+          <span class="mobile-nav__name">Локации и расписание</span>
+        </a>
+        <a href="#faq" class="mobile-nav__link">
+          <span class="mobile-nav__num">06</span>
+          <span class="mobile-nav__name">Вопросы и ответы (FAQ)</span>
+        </a>
+      </div>
+      <div class="mobile-nav__footer">
+        <p class="mobile-nav__city">
+          <i data-lucide="map-pin" aria-hidden="true"></i>
+          <span>Тирасполь · 2 локации</span>
+        </p>
+        <div class="mobile-nav__actions">
+          <button class="mobile-nav__btn mobile-nav__btn--primary" type="button" data-contact-open>
+            <i data-lucide="send" aria-hidden="true"></i>
+            <span>Написать Светлане</span>
+          </button>
+          <a href="tel:077560512" class="mobile-nav__btn mobile-nav__btn--tel">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <span>0775 605 12</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <!-- One complete photo; typography and the motion line remain independent layers. -->
+        <picture class="hero-photo">
+          <source media="(max-width: 767px)" srcset="Assets/hero-svetlana-studio-v4-mobile.jpg" />
+          <img
+            src="Assets/hero-sveta-prev-upsc2.jpeg"
+            width="1672"
+            height="941"
+            alt="Светлана выполняет упражнение на мобильность на пыльно-розовом коврике в фитнес-студии"
+            fetchpriority="high"
+          />
+        </picture>
+
+        <div class="hero-heading-wrap">
+          <p class="hero-location">
+            <i class="hero-location__icon" data-lucide="map-pin" aria-hidden="true"></i>
+            <span>Тирасполь</span>
+            <span class="hero-location__separator" aria-hidden="true">·</span>
+            <span>2 локации</span>
+          </p>
+          <h1 class="hero-title" id="hero-title">
+            <span>Фитнес</span>
+            <span>массаж</span>
+          </h1>
+          <button class="hero-fitness-action" type="button" data-contact-open>
+            Записаться
+            <i class="hero-fitness-action__icon" data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+          <div class="hero-intro">
+            <p class="hero-intro__eyebrow">Бережная работа с телом</p>
+            <p class="hero-intro__text">через движение и восстановление</p>
+          </div>
+        </div>
+
+        <svg class="motion-line" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            pathLength="100"
+            d="M-40 180 C 130 26, 235 112, 338 315 S 541 501, 658 430 S 842 430, 936 480 S 1190 566, 1480 286"
+          />
+        </svg>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>Листайте ниже</span>
+          <i class="scroll-cue__icon" data-lucide="arrow-down"></i>
+        </div>
+      </section>
+
+      <div class="directions" aria-label="Направления работы">
+        <section class="direction-band direction-band--movement" id="fitness" aria-labelledby="movement-title">
+          <div class="direction-band__content">
+            <h2 class="direction-title" id="movement-title" aria-label="Движение">
+              <span class="direction-title__number">01</span>
+              <span class="direction-title__slash" aria-hidden="true">/</span>
+              <span class="direction-title__label">
+                <span class="direction-title__name">Движение</span>
+                <span class="direction-band__experience">Фитнес и тренировки</span>
+              </span>
+            </h2>
+            <div class="direction-formats" aria-label="Форматы тренировок">
+              <span class="direction-format-badge">Пилатес и стрейчинг</span>
+              <span class="direction-format-badge">Функционал и табата</span>
+              <span class="direction-format-badge">Port de Bras</span>
+              <span class="direction-format-badge">Зумба и йога</span>
+            </div>
+            <p class="direction-copy">
+              Работа с нагрузкой, которая помогает развивать тело и лучше чувствовать
+              себя в движении. Темп и интенсивность подбираются под ваши возможности.
+            </p>
+            <div class="direction-table" aria-label="Ключевые аспекты движения">
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="dumbbell"></i></span>
+                <span class="direction-table__title">Сила</span>
+                <span class="direction-table__desc">сила и мышечный контроль</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="rotate-3d"></i></span>
+                <span class="direction-table__title">Мобильность</span>
+                <span class="direction-table__desc">подвижность и гибкость суставов</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+                <span class="direction-table__title">Устойчивость</span>
+                <span class="direction-table__desc">выносливость и работа корпуса</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="footprints"></i></span>
+                <span class="direction-table__title">Уверенность</span>
+                <span class="direction-table__desc">координация и осанка</span>
+              </div>
+            </div>
+          </div>
+          <picture class="direction-band__photo">
+            <img
+              src="Assets/movement-section-v2.png"
+              width="1672"
+              height="941"
+              alt="Иллюстративный кадр женщины в выпаде на коврике в светлой фитнес-студии"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </section>
+
+        <section class="direction-band direction-band--recovery" id="massage" aria-labelledby="recovery-title">
+          <picture class="direction-band__photo">
+            <img
+              src="Assets/vosstan.jpeg"
+              width="2752"
+              height="1536"
+              alt="Иллюстративный кадр процесса массажа в светлом кабинете"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <div class="direction-band__content">
+            <h2 class="direction-title" id="recovery-title" aria-label="Восстановление">
+              <span class="direction-title__number">02</span>
+              <span class="direction-title__slash" aria-hidden="true">/</span>
+              <span class="direction-title__label">
+                <span class="direction-title__name">Восстановление</span>
+                <span class="direction-band__experience">Массаж и забота о теле</span>
+              </span>
+            </h2>
+            <div class="direction-formats" aria-label="Виды массажа">
+              <span class="direction-format-badge">Лимфодренажный</span>
+              <span class="direction-format-badge">Расслабляющий</span>
+              <span class="direction-format-badge">Медовый</span>
+              <span class="direction-format-break" aria-hidden="true"></span>
+              <span class="direction-format-badge">Восстановительный</span>
+              <span class="direction-format-badge">Спортивный</span>
+              <span class="direction-format-badge">Антицеллюлитный</span>
+            </div>
+            <p class="direction-copy">
+              Бережная, но глубокая работа с телом. Массаж дополняет физическую нагрузку
+              и помогает возвращать больше комфорта после активных дней.
+            </p>
+            <div class="direction-table" aria-label="Ключевые аспекты восстановления">
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="hand"></i></span>
+                <span class="direction-table__title">Снятие напряжения</span>
+                <span class="direction-table__desc">меньше усталости в мышцах</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="refresh-cw"></i></span>
+                <span class="direction-table__title">Восстановление</span>
+                <span class="direction-table__desc">после нагрузки и активных дней</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+                <span class="direction-table__title">Комфорт в теле</span>
+                <span class="direction-table__desc">ощущение легкости и баланса</span>
+              </div>
+              <div class="direction-table__row">
+                <span class="direction-table__icon" aria-hidden="true"><i data-lucide="waves"></i></span>
+                <span class="direction-table__title">Свобода движения</span>
+                <span class="direction-table__desc">циркуляция и пластичность тканей</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="experience" id="about" aria-labelledby="experience-title">
+        <span class="experience__ghost-year experience__ghost-year--fitness" aria-hidden="true">ТОНУС</span>
+        <span class="experience__ghost-year experience__ghost-year--massage" aria-hidden="true">РЕЛАКС</span>
+
+        <div class="experience__inner">
+          <header class="experience__header">
+            <p class="section-kicker">О Светлане</p>
+            <h2 id="experience-title">Опыт, который<br />работает вместе</h2>
+          </header>
+
+          <picture class="experience__photo">
+            <img
+              class="experience__photo-image"
+              src="Assets/about-svetlana-v2.png"
+              width="1452"
+              height="1083"
+              alt="Светлана — специалист по фитнесу и массажу"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+
+          <article class="experience__year-card experience__year-card--fitness" aria-label="Фитнес — с 2013 года">
+            <header class="experience__year-card-header">
+              <p class="experience__year-kicker"><span class="experience__year-dot" aria-hidden="true"></span>Начало пути</p>
+            </header>
+            <div class="experience__year-main">
+              <strong><span class="experience__year-prefix">с</span><span class="experience__year-number">2013</span><span class="experience__year-suffix">года</span></strong>
+              <h3>Фитнес</h3>
+            </div>
+            <p class="experience__year-desc">
+              Персональные и групповые тренировки: постановка безопасной техники, развитие силы, выносливости и осознанности в каждом движении.
+            </p>
+          </article>
+
+          <article class="experience__year-card experience__year-card--massage" aria-label="Массаж — с 2020 года">
+            <header class="experience__year-card-header">
+              <p class="experience__year-kicker"><span class="experience__year-dot" aria-hidden="true"></span>Новое направление</p>
+            </header>
+            <div class="experience__year-main">
+              <strong><span class="experience__year-prefix">с</span><span class="experience__year-number">2020</span><span class="experience__year-suffix">года</span></strong>
+              <h3>Массаж</h3>
+            </div>
+            <p class="experience__year-desc">
+              Телесная практика и восстановление: бережные техники, снятие мышечного напряжения, глубокий отдых и гармоничный баланс с нагрузкой.
+            </p>
+          </article>
+
+
+          <div class="experience__note">
+            <p class="experience__note-kicker">
+              <span class="experience__note-dot" aria-hidden="true"></span>
+              Единый подход
+            </p>
+            <p class="experience__note-title">Два направления.<br />Один подход к телу.</p>
+            <p class="experience__note-text">
+              Движение развивает силу и мобильность, а массаж помогает телу восстановиться.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           BLOG PREVIEW SECTION
+           =================================================================== -->
+      <section class="blog-preview" id="blog" aria-labelledby="blog-title">
+        <div class="blog-preview__container">
+          <header class="blog-preview__header">
+            <div class="blog-preview__header-left">
+              <p class="section-kicker"><span class="blog-preview__dot" aria-hidden="true"></span>Журнал Светланы</p>
+              <h2 class="blog-preview__title" id="blog-title">Знания о движении и восстановлении</h2>
+              <p class="blog-preview__lead">
+                Практические статьи о балансе женского тела: как грамотно чередовать нагрузку и отдых, слушать мышечные сигналы и поддерживать комфортное самочувствие каждый день.
+              </p>
+            </div>
+          </header>
+
+          <div class="blog-preview__bottom">
+            <div class="blog-preview__topics" aria-label="Ключевые темы блога">
+              <span class="blog-preview__topics-label">Темы:</span>
+              <div class="blog-preview__topics-list">
+                <a href="blog.html?topic=mindful" class="blog-preview__topic-tag">#осознанное_движение</a>
+                <a href="blog.html?topic=recovery" class="blog-preview__topic-tag">#восстановление</a>
+                <a href="blog.html?topic=pilates" class="blog-preview__topic-tag">#пилатес_и_стрейчинг</a>
+                <a href="blog.html?topic=drainage" class="blog-preview__topic-tag">#лимфодренаж</a>
+                <a href="blog.html?topic=balance" class="blog-preview__topic-tag">#баланс_нагрузки</a>
+              </div>
+            </div>
+            <a href="blog.html" class="blog-preview__bottom-cta" aria-label="Перейти ко всем статьям журнала Светланы">
+              <span>Все статьи журнала</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="blog-preview__grid">
+            <!-- Article 1: Synergy -->
+            <article class="blog-card blog-card--preview blog-card--synergy" aria-labelledby="blog-card-1-title">
+              <div class="blog-card__image-wrap">
+                <img
+                  class="blog-card__image"
+                  src="Assets/vosstan.jpeg"
+                  width="700"
+                  height="450"
+                  alt="Процесс восстановления и заботы о теле"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="blog-card__badge-row">
+                  <span class="blog-card__tag blog-card__tag--synergy">Комплексный подход</span>
+                  <span class="blog-card__read-time">5 мин чтения</span>
+                </div>
+              </div>
+              <div class="blog-card__content">
+                <time class="blog-card__date" datetime="2026-08-28">28 августа 2026</time>
+                <h3 class="blog-card__title" id="blog-card-1-title">
+                  <a href="article-massage-recovery.html" class="blog-card__title-link">
+                    Два направления — одно тело: почему массаж необходим при тренировках
+                  </a>
+                </h3>
+                <p class="blog-card__excerpt">
+                  Как осознанное сочетание физической активности и массажа помогает мышцам восстанавливать эластичность и защищает от перегрузок.
+                </p>
+                <div class="blog-card__footer">
+                  <a href="article-massage-recovery.html" class="blog-card__cta" aria-label="Читать статью о комплексном подходе">
+                    <span>Читать статью</span>
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="4" y1="10" x2="16" y2="10"></line>
+                      <polyline points="10 4 16 10 10 16"></polyline>
+                    </svg>
+                  </a>
+                  <button type="button" class="blog-card__copy-btn" data-url="article-massage-recovery.html" aria-label="Скопировать ссылку на статью">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Скопировать ссылку</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2: Fitness -->
+            <article class="blog-card blog-card--preview blog-card--fitness" aria-labelledby="blog-card-2-title">
+              <div class="blog-card__image-wrap">
+                <img
+                  class="blog-card__image"
+                  src="Assets/dvizhenie.png"
+                  width="700"
+                  height="450"
+                  alt="Осознанные тренировки и мягкий фитнес"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="blog-card__badge-row">
+                  <span class="blog-card__tag blog-card__tag--fitness">Фитнес</span>
+                  <span class="blog-card__read-time">4 мин чтения</span>
+                </div>
+              </div>
+              <div class="blog-card__content">
+                <time class="blog-card__date" datetime="2026-08-15">15 августа 2026</time>
+                <h3 class="blog-card__title" id="blog-card-2-title">
+                  <a href="article-mindful-fitness.html" class="blog-card__title-link">
+                    Мягкий фитнес: пилатес, стрейчинг и осознанная работа с осанкой
+                  </a>
+                </h3>
+                <p class="blog-card__excerpt">
+                  Бережная работа с глубокими постуральными мышцами и подвижностью суставов даёт устойчивый тонус без переутомления.
+                </p>
+                <div class="blog-card__footer">
+                  <a href="article-mindful-fitness.html" class="blog-card__cta" aria-label="Читать статью о мягком фитнесе">
+                    <span>Читать статью</span>
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="4" y1="10" x2="16" y2="10"></line>
+                      <polyline points="10 4 16 10 10 16"></polyline>
+                    </svg>
+                  </a>
+                  <button type="button" class="blog-card__copy-btn" data-url="article-mindful-fitness.html" aria-label="Скопировать ссылку на статью">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Скопировать ссылку</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3: Massage -->
+            <article class="blog-card blog-card--preview blog-card--massage" aria-labelledby="blog-card-3-title">
+              <div class="blog-card__image-wrap">
+                <img
+                  class="blog-card__image"
+                  src="Assets/massage-section.png"
+                  width="700"
+                  height="450"
+                  alt="Телесная практика и массаж"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="blog-card__badge-row">
+                  <span class="blog-card__tag blog-card__tag--massage">Массаж</span>
+                  <span class="blog-card__read-time">4 мин чтения</span>
+                </div>
+              </div>
+              <div class="blog-card__content">
+                <time class="blog-card__date" datetime="2026-08-04">4 августа 2026</time>
+                <h3 class="blog-card__title" id="blog-card-3-title">
+                  <a href="article-lymphatic-drainage.html" class="blog-card__title-link">
+                    Лимфодренажный и расслабляющий массаж: как снять напряжение
+                  </a>
+                </h3>
+                <p class="blog-card__excerpt">
+                  Как мягкие массажные техники помогают ускорить отток жидкости, успокаивают нервную систему и возвращают лёгкость.
+                </p>
+                <div class="blog-card__footer">
+                  <a href="article-lymphatic-drainage.html" class="blog-card__cta" aria-label="Читать статью о лимфодренаже">
+                    <span>Читать статью</span>
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="4" y1="10" x2="16" y2="10"></line>
+                      <polyline points="10 4 16 10 10 16"></polyline>
+                    </svg>
+                  </a>
+                  <button type="button" class="blog-card__copy-btn" data-url="article-lymphatic-drainage.html" aria-label="Скопировать ссылку на статью">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Скопировать ссылку</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="locations" id="locations" aria-labelledby="locations-title">
+        <div class="locations__container">
+          <header class="locations__header">
+            <p class="section-kicker">Локации в Тирасполе</p>
+            <h2 class="locations__title" id="locations-title">Две студии. Два пространства.</h2>
+            <p class="locations__lead">
+              Тренировки и массаж проходят в двух специализированных студиях с продуманным графиком. Выберите удобный адрес и запланируйте визит.
+            </p>
+          </header>
+
+          <div class="locations__grid">
+            <!-- Location 1: Fitness -->
+            <article class="location-card location-card--fitness" aria-labelledby="location-fitness-title">
+              <div class="location-card__header">
+                <div class="location-card__badge">
+                  <span class="location-card__num">ФИТНЕС</span>
+                  <!-- <span class="location-card__dir">Фитнес</span> -->
+                </div>
+                <h3 class="location-card__name" id="location-fitness-title">Зал для тренировок</h3>
+              </div>
+
+              <div class="location-card__details">
+                <div class="location-card__item">
+                  <div class="location-card__icon" aria-hidden="true">
+                    <i data-lucide="map-pin"></i>
+                  </div>
+                  <div class="location-card__info">
+                    <span class="location-card__label">Точный адрес</span>
+                    <strong class="location-card__address">ул. Заречная, 42а</strong>
+                    <span class="location-card__subtext">Офисное здание, 3 этаж · вход со двора</span>
+                  </div>
+                </div>
+
+                <div class="location-card__item">
+                  <div class="location-card__icon" aria-hidden="true">
+                    <i data-lucide="clock"></i>
+                  </div>
+                  <div class="location-card__info">
+                    <span class="location-card__label">График тренировок</span>
+                    <div class="location-card__schedule">
+                      <div class="location-card__schedule-row">
+                        <span class="location-card__days">Пн, Ср, Пт:</span>
+                        <span class="location-card__hours">10:00 · 18:00 · 19:00</span>
+                      </div>
+                      <div class="location-card__schedule-row">
+                        <span class="location-card__days">Вс:</span>
+                        <span class="location-card__hours">16:00</span>
+                      </div>
+                    </div>
+                    <span class="location-card__note">По предварительной записи</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="location-card__actions">
+                <button class="location-card__btn location-card__btn--primary" type="button" data-contact-open>
+                  <i data-lucide="send" aria-hidden="true"></i>
+                  <span>Записаться</span>
+                </button>
+                <a
+                  class="location-card__btn location-card__btn--secondary"
+                  href="https://yandex.ru/maps/?text=%D0%A2%D0%B8%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%97%D0%B0%D1%80%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%2042%D0%B0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Открыть адрес ул. Заречная 42а на Яндекс.Картах"
+                >
+                  <i data-lucide="map" aria-hidden="true"></i>
+                  <span>На карте</span>
+                </a>
+              </div>
+
+              <div
+                class="location-card__map-wrap"
+                id="map-fitness"
+                data-lat="46.8488"
+                data-lng="29.5965"
+                data-title="Тренировки"
+                data-address="ул. Заречная, 42а"
+                data-hint="3 этаж · вход со двора"
+                data-theme="turquoise"
+                role="region"
+                aria-label="Интерактивная карта: зал на ул. Заречная 42а"
+              ></div>
+            </article>
+
+            <!-- Location 2: Massage -->
+            <article class="location-card location-card--massage" aria-labelledby="location-massage-title">
+              <div class="location-card__header">
+                <div class="location-card__badge">
+                  <span class="location-card__num">МАССАЖ</span>
+                  <!-- <span class="location-card__dir">Массаж</span> -->
+                </div>
+                <h3 class="location-card__name" id="location-massage-title">Студия Viki</h3>
+              </div>
+
+              <div class="location-card__details">
+                <div class="location-card__item">
+                  <div class="location-card__icon" aria-hidden="true">
+                    <i data-lucide="map-pin"></i>
+                  </div>
+                  <div class="location-card__info">
+                    <span class="location-card__label">Точный адрес</span>
+                    <strong class="location-card__address">ул. Балковская, 35</strong>
+                    <span class="location-card__subtext">Студия массажа Viki</span>
+                  </div>
+                </div>
+
+                <div class="location-card__item">
+                  <div class="location-card__icon" aria-hidden="true">
+                    <i data-lucide="clock"></i>
+                  </div>
+                  <div class="location-card__info">
+                    <span class="location-card__label">График работы</span>
+                    <div class="location-card__schedule">
+                      <div class="location-card__schedule-row">
+                        <span class="location-card__days">Пн – Сб:</span>
+                        <span class="location-card__hours">09:00 – 18:00</span>
+                      </div>
+                      <div class="location-card__schedule-row">
+                        <span class="location-card__days">Вс:</span>
+                        <span class="location-card__hours">Выходной</span>
+                      </div>
+                    </div>
+                    <span class="location-card__note">Только по предварительной записи</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="location-card__actions">
+                <button class="location-card__btn location-card__btn--primary" type="button" data-contact-open>
+                  <i data-lucide="send" aria-hidden="true"></i>
+                  <span>Записаться</span>
+                </button>
+                <a
+                  class="location-card__btn location-card__btn--secondary"
+                  href="https://yandex.ru/maps/?text=%D0%A2%D0%B8%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D0%B0%D0%BB%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%2035"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Открыть адрес ул. Балковская 35 на Яндекс.Картах"
+                >
+                  <i data-lucide="map" aria-hidden="true"></i>
+                  <span>На карте</span>
+                </a>
+              </div>
+
+              <div
+                class="location-card__map-wrap"
+                id="map-massage"
+                data-lat="46.8322"
+                data-lng="29.6548"
+                data-title="Массаж"
+                data-address="ул. Балковская, 35"
+                data-hint="Студия Viki"
+                data-theme="rose"
+                role="region"
+                aria-label="Интерактивная карта: студия Viki на ул. Балковская 35"
+              ></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="faq__container">
+          <header class="faq__header">
+            <p class="section-kicker">Коротко о главном</p>
+            <h2 class="faq__title" id="faq-title">Важно знать</h2>
+          </header>
+
+          <div class="faq__grid" role="region" aria-label="Часто задаваемые вопросы">
+            <!-- Column 1: Фитнес -->
+            <div class="faq__column">
+              <div class="faq__category-header">
+                <span class="faq__category-num">01</span>
+                <h3 class="faq__category-title">Фитнес и тренировки</h3>
+              </div>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">С какого уровня можно начать?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    С любого, в том числе с нуля или после длительного перерыва. Нагрузка, темп и сложность упражнений подбираются под ваши возможности, чтобы возвращение к активности было безопасным и комфортным.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Как строятся тренировки?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    В фокусе — сила, мобильность, баланс и правильная техника. Программа выстраивается бережно и последовательно, без изнуряющего стресса, помогая почувствовать уверенность и легкость в теле.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Что взять с собой на занятие?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Удобную спортивную одежду, чистую сменную обувь (или носочки в зависимости от формата) и бутылку воды. Коврики и весь тренировочный инвентарь уже есть в зале.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <!-- Column 2: Массаж -->
+            <div class="faq__column">
+              <div class="faq__category-header">
+                <span class="faq__category-num">02</span>
+                <h3 class="faq__category-title">Массаж и восстановление</h3>
+              </div>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Массаж мягкий или глубокий?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Подход бережный, но глубокий. Перед каждым сеансом мы обсуждаем чувствительные зоны, пожелания и цели, а интенсивность воздействия всегда можно скорректировать прямо в процессе.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Чем массаж дополняет тренировки?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Тренировки укрепляют тело и развивают мышцы, а массаж ускоряет восстановление, снимает накопившееся напряжение и улучшает подвижность. Это две стороны комплексной заботы о теле.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Как подготовиться к сеансу массажа?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Рекомендуется прийти за 5–10 минут, чтобы спокойно переодеться и настроиться, и не принимать тяжелую пищу за 1–1,5 часа. Все одноразовые принадлежности есть в студии.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <!-- Column 3: Запись и первый визит -->
+            <div class="faq__column">
+              <div class="faq__category-header">
+                <span class="faq__category-num">03</span>
+                <h3 class="faq__category-title">Запись и первый визит</h3>
+              </div>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Как выбрать подходящий формат?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Если вам хочется развить силу и подвижность — начните с фитнеса. Если нужно снять напряжение и восстановить ресурс — выберите массаж. Их можно гармонично совмещать или чередовать.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Как записаться и узнать расписание?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Напишите в Telegram, WhatsApp, Viber или позвоните по телефону. Актуальные дни и часы тренировок также оперативно согласуются и публикуются в личной Telegram-группе.
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq__item" name="important-faq">
+                <summary class="faq__summary">
+                  <span class="faq__question">Можно ли перенести или отменить визит?</span>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <svg class="faq__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq__answer">
+                  <p>
+                    Да, планы могут измениться. Пожалуйста, сообщите об отмене или переносе заранее в мессенджере или по телефону, чтобы мы смогли подобрать другое удобное время для вас.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="faq__footer">
+            <p class="faq__footer-text">Остались вопросы по формату или подготовке?</p>
+            <button class="hero-fitness-action faq__footer-btn" type="button" data-contact-open>
+              <span>Задать вопрос напрямую</span>
+              <i class="hero-fitness-action__icon" data-lucide="arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="contacts" aria-labelledby="final-cta-title">
+        <picture class="final-cta__photo">
+          <source media="(max-width: 768px)" srcset="Assets/final-cta-bg-mobile.jpg" width="768" height="1024" />
+          <img
+            src="Assets/final-cta-bg.jpg"
+            width="2048"
+            height="1143"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <div class="final-cta__content">
+          <h2 id="final-cta-title">Написать Светлане</h2>
+          <p>Есть вопросы или хотите записаться? Напишите — обсудим подходящий формат и время.</p>
+          <button class="hero-fitness-action final-cta__button" type="button" data-contact-open>
+            Написать Светлане
+            <i class="hero-fitness-action__icon" data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#hero" aria-label="Светлана — наверх">
+        <svg
+          class="footer-brand__symbol"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 296.29 172.31"
+          width="290"
+          height="166"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            class="footer-brand__symbol-primary"
+            d="M239.33,64.27c-2.91-.73-11.54.26-11.54.26-9.78,1.44-20.89,9.85-26.02,14.34-11.91,10.42-24.93,27.8-37.62,43.72-5.43,6.82-10.8,13.37-15.99,19-.01,0-.02,0-.02-.02-.59.66-1.19,1.31-1.8,1.95-15.14,15.89-36.5,25.79-60.18,25.79-45.93,0-83.16-37.23-83.16-83.16S40.23,3,86.16,3c19.85,0,39.08,7.96,53.37,19.57l-15.69,18.79c-10.05-8.06-23.8-13.88-37.68-13.88-32.41,0-58.67,26.27-58.67,58.67s26.26,58.67,58.67,58.67c14.43,0,27.64-5.2,37.86-13.85.32-.26.63-.53.93-.8.22-.19.44-.38.66-.59,2.93-2.57,5.94-5.5,8.98-8.65,6.25-6.47,12.59-13.86,18.49-21.04,5.99-7.29,11.52-14.37,16-20.04,3.24-4.11,5.93-7.47,7.85-9.65,5.7-6.45,11.26-12.49,20.62-16.38,4.3-1.79,13.93-4.32,24.98-.84,9.62,3.02,14.89,8.55,16.8,11.29Z"
+          />
+          <path
+            class="footer-brand__symbol-secondary"
+            d="M293.29,86.15c0,45.93-37.23,83.16-83.16,83.16-19.85,0-39.07-7.96-53.37-19.57l15.69-18.8c10.04,8.06,23.8,13.88,37.68,13.88,32.41,0,58.67-26.26,58.67-58.67s-26.26-58.67-58.67-58.67c-14.43,0-27.65,5.21-37.86,13.86-.31.26-.62.53-.93.8-.18.15-.35.31-.53.46-.04.04-.08.07-.12.12-2.93,2.57-5.95,5.5-8.99,8.66-6.24,6.47-12.59,13.86-18.49,21.04-5.99,7.29-11.52,14.37-15.99,20.04,0,0-.01,0,0,0-3.25,4.1-5.94,7.46-7.86,9.64-5.7,6.45-11.26,12.48-20.61,16.37-4.31,1.79-13.93,4.33-24.99.85-9.62-3.02-14.88-8.55-16.8-11.3,2.91.74,11.54-.25,11.54-.25,9.78-1.44,20.89-9.86,26.02-14.35,11.91-10.42,24.93-27.79,37.62-43.72,5.43-6.81,10.79-13.36,15.98-18.99t.02.02c.58-.66,1.19-1.31,1.8-1.95,15.15-15.89,36.51-25.79,60.19-25.79,45.93,0,83.16,37.23,83.16,83.15Z"
+          />
+        </svg>
+        <span>
+          <strong>Светлана</strong>
+          <small>Фитнес × массаж</small>
+        </span>
+      </a>
+
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="#fitness">Фитнес</a>
+        <a href="#massage">Массаж</a>
+        <a href="#about">О Светлане</a>
+        <a href="#blog">Блог</a>
+        <a href="#locations">Локации</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="footer-socials" aria-label="Социальные сети и мессенджеры">
+        <a href="https://www.instagram.com/love_to_sport_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Светланы о фитнесе">
+          <svg class="footer-socials__icon footer-socials__icon--instagram" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" />
+            <circle cx="12" cy="12" r="4.05" />
+            <circle class="footer-socials__dot" cx="17.55" cy="6.55" r="1.05" />
+          </svg>
+        </a>
+        <button type="button" data-contact-open aria-label="Написать Светлане в Telegram">
+          <svg class="footer-socials__icon footer-socials__icon--telegram" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.45 3.72 3.92 10.1c-1.13.45-1.12 1.08-.2 1.36l4.24 1.32 1.63 5.04c.2.57.1.8.7.8.47 0 .68-.21.94-.46l2.04-1.98 4.25 3.14c.78.43 1.34.21 1.54-.73l2.79-13.16c.28-1.14-.44-1.66-1.4-1.22Z" />
+            <path d="m8.25 12.63 9.55-6.02-7.88 7.3-.3 3.68" />
+          </svg>
+        </button>
+        <button type="button" data-contact-open aria-label="Написать Светлане в WhatsApp">
+          <svg class="footer-socials__icon footer-socials__icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.35 11.7a8.3 8.3 0 0 1-12.28 7.28L3.7 20.12l1.17-4.23A8.3 8.3 0 1 1 20.35 11.7Z" />
+            <path d="M9.18 7.56c.2-.48.42-.5.72-.5h.38c.12 0 .3.04.4.31l.72 1.75c.08.2.04.37-.08.54l-.55.7c-.15.17-.12.34-.02.5.44.75 1.05 1.39 1.8 1.87.2.13.38.1.53-.08l.78-.9c.15-.17.34-.2.54-.11l1.67.8c.22.1.36.16.4.27.05.12.05.66-.15 1.28-.2.63-1.2 1.2-1.67 1.26-.43.06-.98.09-1.58-.1-.36-.11-.83-.27-1.42-.53-2.5-1.08-4.13-3.6-4.25-3.77-.13-.17-1.02-1.36-1.02-2.6 0-1.23.64-1.84.8-2.06Z" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="site-footer__copyright">© <span data-current-year></span> Светлана · Фитнес × массаж</p>
+    </footer>
+
+    <dialog class="contact-dialog" aria-labelledby="contact-title">
+      <button class="contact-dialog__close" type="button" data-contact-close aria-label="Закрыть">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <p class="contact-dialog__eyebrow">Связаться</p>
+      <h2 id="contact-title">Напишите Светлане</h2>
+      <p class="contact-dialog__copy">
+        Номер для Telegram, WhatsApp и Viber. Выберите привычный мессенджер и начните диалог.
+      </p>
+      <p class="contact-dialog__location">Тирасполь <span aria-hidden="true">·</span> 2 локации</p>
+      <div class="contact-channels" aria-label="Быстрый переход в мессенджер">
+        <a href="https://t.me/+37377560512" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--telegram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 3.72 3.92 10.1c-1.13.45-1.12 1.08-.2 1.36l4.24 1.32 1.63 5.04c.2.57.1.8.7.8.47 0 .68-.21.94-.46l2.04-1.98 4.25 3.14c.78.43 1.34.21 1.54-.73l2.79-13.16c.28-1.14-.44-1.66-1.4-1.22Z" />
+          </svg>
+          <span>Telegram</span>
+        </a>
+        <a href="https://wa.me/37377560512" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--whatsapp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M20.35 11.7a8.3 8.3 0 0 1-12.28 7.28L3.7 20.12l1.17-4.23A8.3 8.3 0 1 1 20.35 11.7Z" />
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+        <a href="tel:077560512" class="contact-channel contact-channel--phone">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Позвонить</span>
+        </a>
+      </div>
+      <button class="contact-number" type="button" data-copy-number data-number="0775 605 12">
+        <span>0775 605 12</span>
+        <span class="contact-number__label">Скопировать</span>
+      </button>
+      <p class="contact-dialog__status" data-copy-status aria-live="polite"></p>
+    </dialog>
+  </body>
+</html>

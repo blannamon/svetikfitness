@@ -1,0 +1,5 @@
+.DS_Store
+.chrome-test/
+.chrome-user-dir/
+temporary_screenshots/
+node_modules/
