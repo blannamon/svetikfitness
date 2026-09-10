@@ -79,6 +79,9 @@ if (contactDialog) {
   openButtons.forEach((button) => {
     button.addEventListener('click', () => {
       contactDialog.showModal();
+      if (document.activeElement === closeButton) {
+        closeButton.blur();
+      }
     });
   });
 
@@ -95,16 +98,41 @@ if (contactDialog) {
   });
 }
 
-if (copyButton && copyStatus) {
-  copyButton.addEventListener('click', async () => {
-    const number = copyButton.dataset.number;
+const copyButtons = document.querySelectorAll('[data-copy-number]');
+if (copyButtons.length) {
+  copyButtons.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const number = btn.dataset.number || '0775 605 12';
+      const copyTextEl = btn.querySelector('.contact-phone-btn__copy-text') || btn.querySelector('.contact-number__label') || btn;
+      const originalText = copyTextEl ? copyTextEl.textContent : '';
 
-    try {
-      await navigator.clipboard.writeText(number);
-      copyStatus.textContent = 'Номер скопирован';
-    } catch {
-      copyStatus.textContent = 'Выделите номер и скопируйте вручную';
-    }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(number);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = number;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+
+        btn.classList.add('is-copied');
+        if (copyTextEl) copyTextEl.textContent = 'Скопировано!';
+        if (copyStatus) copyStatus.textContent = 'Номер скопирован в буфер обмена';
+
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          if (copyTextEl) copyTextEl.textContent = originalText;
+          if (copyStatus) copyStatus.textContent = '';
+        }, 2200);
+      } catch {
+        if (copyStatus) copyStatus.textContent = 'Выделите номер и скопируйте вручную';
+      }
+    });
   });
 }
 
