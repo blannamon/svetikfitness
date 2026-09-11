@@ -6,6 +6,29 @@ const copyStatus = document.querySelector('[data-copy-status]');
 const currentYear = document.querySelector('[data-current-year]');
 const faqItems = document.querySelectorAll('.faq details');
 
+function hydrateIcons(root = document) {
+  root.querySelectorAll('[data-lucide]').forEach((placeholder) => {
+    const iconName = placeholder.dataset.lucide;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    svg.className.baseVal = placeholder.className;
+    use.setAttribute('href', `Assets/icons.svg#icon-${iconName}`);
+    svg.append(use);
+    placeholder.replaceWith(svg);
+  });
+}
+
+hydrateIcons();
+
 // Mobile navigation drawer
 const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
@@ -57,10 +80,6 @@ if (mobileNavToggle) {
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
-}
-
-if (window.lucide) {
-  window.lucide.createIcons();
 }
 
 faqItems.forEach((item) => {
@@ -204,7 +223,33 @@ if (blogCopyButtons.length) {
   });
 }
 
-// Interactive Maps initialization
+// Interactive maps: Leaflet and tiles are fetched only near the section or on request.
+let leafletPromise;
+
+function loadLeaflet() {
+  if (window.L) return Promise.resolve(window.L);
+  if (leafletPromise) return leafletPromise;
+
+  leafletPromise = new Promise((resolve, reject) => {
+    if (!document.querySelector('link[data-leaflet-styles]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'Assets/vendor/leaflet/leaflet.css';
+      stylesheet.dataset.leafletStyles = '';
+      document.head.append(stylesheet);
+    }
+
+    const script = document.createElement('script');
+    script.src = 'Assets/vendor/leaflet/leaflet.js';
+    script.async = true;
+    script.onload = () => resolve(window.L);
+    script.onerror = reject;
+    document.head.append(script);
+  });
+
+  return leafletPromise;
+}
+
 function initLocationMaps() {
   const mapElements = document.querySelectorAll('.location-card__map-wrap');
   if (!mapElements.length || typeof L === 'undefined') return;
@@ -212,6 +257,7 @@ function initLocationMaps() {
   mapElements.forEach((mapEl) => {
     if (mapEl.dataset.initialized === 'true') return;
     mapEl.dataset.initialized = 'true';
+    mapEl.querySelector('[data-map-load]')?.remove();
 
     const lat = parseFloat(mapEl.dataset.lat);
     const lng = parseFloat(mapEl.dataset.lng);
@@ -230,7 +276,7 @@ function initLocationMaps() {
       touchZoom: false,
       tap: false,
       zoomControl: !isMobile,
-      attributionControl: false,
+      attributionControl: true,
     });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -289,16 +335,34 @@ function initLocationMaps() {
   return true;
 }
 
-// Ensure maps initialize when ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    initLocationMaps();
-  });
-} else {
-  initLocationMaps();
+function requestMaps() {
+  const section = document.querySelector('.locations');
+  if (!section || section.dataset.mapsRequested === 'true') return;
+  section.classList.add('is-visual-ready');
+  section.dataset.mapsRequested = 'true';
+  section.setAttribute('aria-busy', 'true');
+
+  loadLeaflet()
+    .then(() => initLocationMaps())
+    .catch(() => {
+      section.dataset.mapsRequested = 'false';
+      section.querySelectorAll('[data-map-load]').forEach((button) => {
+        button.querySelector('span').textContent = 'Повторить загрузку карты';
+      });
+    })
+    .finally(() => section.removeAttribute('aria-busy'));
 }
 
-window.addEventListener('load', () => {
-  initLocationMaps();
+document.querySelectorAll('[data-map-load]').forEach((button) => {
+  button.addEventListener('click', requestMaps);
 });
 
+const locationsSection = document.querySelector('.locations');
+if (locationsSection && 'IntersectionObserver' in window) {
+  const mapObserver = new IntersectionObserver((entries, observer) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    requestMaps();
+  }, { rootMargin: '600px 0px' });
+  mapObserver.observe(locationsSection);
+}

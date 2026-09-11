@@ -1,9 +1,27 @@
 @font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("Assets/fonts/Manrope-Cyrillic-Variable.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("Assets/fonts/Manrope-Latin-Variable.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
   font-family: "Segment A Key Bold Hero";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("Assets/fonts/SegmentAKeyTrial-Bold.otf") format("opentype");
+  src: url("Assets/fonts/SegmentAKeyTrial-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -35,7 +53,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("Assets/fonts/steelfishrg.ttf") format("truetype");
+  src: url("Assets/fonts/steelfishrg.woff2") format("woff2");
 }
 
 @font-face {
@@ -43,7 +61,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("Assets/fonts/steelfishBd.ttf") format("truetype");
+  src: url("Assets/fonts/steelfishBd.woff2") format("woff2");
 }
 
 @font-face {
@@ -117,8 +135,10 @@
   --color-graphite: #2b2e2d;
   --color-turquoise: #41c7ba;
   --color-turquoise-deep: #23988d;
+  --color-turquoise-text: #1f746d;
   --color-rose: #f8b3ac;
   --color-rose-deep: #f5a39a;
+  --color-rose-text: #b84e45;
   --color-mint: #ddece7;
   --color-paper: #fbf8f1;
   --color-white: #ffffff;
@@ -840,6 +860,7 @@ button {
 
 .direction-band {
   --direction-accent: var(--color-rose);
+  --direction-accent-text: var(--color-rose-text);
 
   position: relative;
   display: grid;
@@ -853,6 +874,7 @@ button {
 
 .direction-band--movement {
   --direction-accent: var(--color-turquoise);
+  --direction-accent-text: var(--color-turquoise-text);
 }
 
 .direction-band__photo {
@@ -914,7 +936,7 @@ button {
 
 .direction-title__number {
   align-self: flex-start;
-  color: var(--direction-accent);
+  color: var(--direction-accent-text);
   font-family: "Steelfish Regular", "Arial Narrow", sans-serif;
   font-size: 0.42em;
   letter-spacing: -0.02em;
@@ -966,7 +988,7 @@ button {
 .direction-band__experience {
   display: block;
   margin: clamp(14px, 1.4vw, 20px) 0 0;
-  color: var(--direction-accent);
+  color: var(--direction-accent-text);
   font-family: var(--font-body);
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 700;
@@ -2477,6 +2499,40 @@ button {
   line-height: 1.6;
 }
 
+.article-citation {
+  display: inline-block;
+  margin-left: 0.18em;
+  color: var(--color-turquoise-deep);
+  font-size: 0.8em;
+  font-weight: 700;
+  text-underline-offset: 0.18em;
+}
+
+.article-citation:hover,
+.article-citation:focus-visible {
+  color: var(--color-graphite);
+}
+
+.article-citation:focus-visible,
+.article-sources a:focus-visible {
+  outline: 2px solid var(--color-turquoise-deep);
+  outline-offset: 3px;
+}
+
+.article-sources {
+  margin-top: 3.5rem;
+  padding: 1.75rem 2rem;
+  border-top: 1px solid var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line);
+  background: rgba(251, 248, 241, 0.76);
+}
+
+.article-sources h2 { margin-top: 0; }
+.article-sources > p { color: rgba(43, 46, 45, 0.72); font-size: 0.9em; }
+.article-sources ol { margin: 0; padding-left: 1.35rem; }
+.article-sources li { margin: 0.75rem 0; padding-left: 0.25rem; overflow-wrap: anywhere; }
+.article-sources a { color: var(--color-turquoise-deep); font-weight: 650; text-underline-offset: 0.2em; }
+
 /* Author Box */
 .article-author {
   margin-top: 4rem;
@@ -2505,8 +2561,8 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(3.4);
-  transform-origin: 51.5% 37.5%;
+  object-position: center 28%;
+  transform: none;
 }
 
 .article-author__name {
@@ -2673,13 +2729,16 @@ button {
   isolation: isolate;
 }
 
-.locations::before {
+.locations.is-visual-ready::before {
   position: absolute;
   z-index: -2;
   inset: 0;
   content: "";
   pointer-events: none;
-  background-image: url("Assets/locations-bg2.jpeg");
+  background-image: image-set(
+    url("Assets/optimized/locations-1280.avif") type("image/avif"),
+    url("Assets/optimized/locations-1280.webp") type("image/webp")
+  );
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -2837,12 +2896,16 @@ button {
 }
 
 .location-card__name {
+  min-width: 0;
+  max-width: 72%;
   margin: 0;
   font-family: var(--font-display);
   font-style: italic;
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 400;
   line-height: 1.25;
+  text-align: right;
+  text-wrap: balance;
   color: var(--color-graphite);
 }
 
@@ -2960,7 +3023,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 42px;
+  min-height: 44px;
   border-radius: 999px;
   font-family: var(--font-body);
   text-decoration: none;
@@ -3058,6 +3121,77 @@ button {
   position: relative;
   z-index: 1;
   background: #ece7de;
+}
+
+.location-card__map-load {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  border: 0;
+  color: var(--color-graphite);
+  background: rgba(251, 248, 241, 0.86);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 180ms var(--ease-out), color 180ms var(--ease-out);
+}
+
+.locations.is-visual-ready .location-card__map-load::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  opacity: 0.38;
+  background-image: image-set(
+    url("Assets/optimized/locations-768.avif") type("image/avif"),
+    url("Assets/optimized/locations-768.webp") type("image/webp")
+  );
+  background-position: center;
+  background-size: cover;
+}
+
+.location-card__map-load > * {
+  position: relative;
+}
+
+.location-card__map-load svg {
+  width: 24px;
+  height: 24px;
+}
+
+.location-card__map-load span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.location-card__map-load small {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.location-card__map-load:hover {
+  color: var(--color-turquoise-deep);
+  background-color: rgba(221, 236, 231, 0.9);
+}
+
+.location-card__map-load:active {
+  color: var(--color-graphite);
+}
+
+.location-card__map-load:focus-visible {
+  z-index: 2;
+  outline: 3px solid var(--color-turquoise-deep);
+  outline-offset: -5px;
+}
+
+.blog-card__image-wrap picture,
+.article-hero-image picture,
+.article-author__avatar picture {
+  display: contents;
 }
 
 .location-card__map-wrap .leaflet-tile {
@@ -3410,7 +3544,6 @@ button {
 }
 
 .footer-socials__icon--instagram,
-.footer-socials__icon--telegram,
 .footer-socials__icon--whatsapp {
   fill: none;
   stroke: currentColor;
@@ -3427,7 +3560,7 @@ button {
 .site-footer__copyright {
   grid-column: 1 / -1;
   margin: 4px 0 0;
-  color: rgba(43, 46, 45, 0.62);
+  color: rgba(43, 46, 45, 0.76);
   font-size: 12px;
   text-align: center;
 }
@@ -3600,28 +3733,18 @@ button {
   transition: transform 180ms ease;
 }
 
-.contact-channel--telegram .contact-channel__icon {
-  color: #24a1de;
-  background: rgba(36, 161, 222, 0.1);
-}
-
 .contact-channel--whatsapp .contact-channel__icon {
   color: #25d366;
   background: rgba(37, 211, 102, 0.12);
 }
 
-.contact-channel--viber .contact-channel__icon {
-  color: #7360f2;
-  background: rgba(115, 96, 242, 0.1);
+.contact-channel--instagram .contact-channel__icon {
+  color: #c13584;
+  background: rgba(193, 53, 132, 0.1);
 }
 
 .contact-channel:hover .contact-channel__icon {
   transform: scale(1.08);
-}
-
-.contact-channel--telegram:hover {
-  border-color: rgba(36, 161, 222, 0.4);
-  background-color: #f8fbfe;
 }
 
 .contact-channel--whatsapp:hover {
@@ -3629,9 +3752,9 @@ button {
   background-color: #f8fdf9;
 }
 
-.contact-channel--viber:hover {
-  border-color: rgba(115, 96, 242, 0.4);
-  background-color: #faf9fe;
+.contact-channel--instagram:hover {
+  border-color: rgba(193, 53, 132, 0.35);
+  background-color: #fff8fc;
 }
 
 .contact-channel__info {
@@ -4449,7 +4572,7 @@ button {
 
   .location-card__header {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 8px;
     margin-bottom: 12px;
@@ -4503,6 +4626,19 @@ button {
 
   .location-card__btn {
     min-height: 40px;
+  }
+
+  .leaflet-custom-popup .leaflet-popup-content {
+    width: 220px !important;
+  }
+
+  .custom-map-popup,
+  .custom-map-popup__tag,
+  .custom-map-popup__addr,
+  .custom-map-popup__hint {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .location-card__map-wrap {
@@ -4570,9 +4706,10 @@ button {
 
   .final-cta__button {
     width: 100%;
-    max-width: 340px;
+    max-width: min(340px, calc(100vw - 40px));
     min-width: 0;
     min-height: 50px;
+    padding-inline: 18px;
   }
 
   .site-footer {

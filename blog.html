@@ -6,32 +6,25 @@
     <meta name="theme-color" content="#f4efe6" />
     <meta
       name="description"
-      content="Журнал Светланы: статьи о женском фитнесе, массаже и комплексном восстановлении тела в Тирасполе. Практические советы и бережный подход к здоровью."
+      content="Журнал Светланы о женском фитнесе, массаже и восстановлении в Тирасполе: практические материалы о движении, нагрузке и комфорте в теле."
     />
     <title>Журнал о теле — Фитнес × Массаж — Светлана</title>
     <link rel="icon" href="Assets/LogoSVG.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="preload"
-      href="Assets/fonts/SegmentAKeyTrial-Bold.otf"
+      href="Assets/fonts/Manrope-Cyrillic-Variable.woff2"
       as="font"
-      type="font/otf"
+      type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.min.css" />
+    <script src="script.min.js" defer></script>
   </head>
   <body class="page-blog">
     <a class="skip-link" href="#main-content">К основному содержанию</a>
 
     <header class="site-header" aria-label="Главная навигация">
-      <a class="wordmark" href="index.html#hero" aria-label="Светлана — на главную">
+      <a class="wordmark" href="index.html#hero" aria-label="Светлана Фитнес × Массаж — на главную">
         <svg
           class="wordmark__symbol"
           viewBox="0 0 296.29 172.31"
@@ -86,22 +79,22 @@
           <p class="section-kicker"><span class="blog-preview__dot" aria-hidden="true"></span>Статьи и практики</p>
           <h1 class="blog-page__title">Журнал о теле:<br />движение, массаж и баланс</h1>
           <p class="blog-page__lead">
-            Материалы специалиста по фитнесу (с 2013 года) и массажу (с 2020 года) Светланы в Тирасполе. О том, как слышать потребности своего тела, сохранять здоровье мышц и совмещать тренировочный драйв с глубоким телесным восстановлением.
+            Материалы Светланы Литосовой — фитнес с 2013 года, массаж с 2020 года. Спокойно и по источникам: о выборе нагрузки, восстановлении и границах wellness-практик.
           </p>
 
           <!-- Category filter buttons -->
           <div class="blog-page__filters" role="tablist" aria-label="Фильтр статей по тематике">
             <button class="blog-filter-btn is-active" type="button" data-filter="all" role="tab" aria-selected="true">
-              Все публикации <span class="blog-filter-btn__count">3</span>
+              Все публикации <span class="blog-filter-btn__count">6</span>
             </button>
             <button class="blog-filter-btn" type="button" data-filter="synergy" role="tab" aria-selected="false">
               Комплексный подход <span class="blog-filter-btn__count">1</span>
             </button>
             <button class="blog-filter-btn" type="button" data-filter="fitness" role="tab" aria-selected="false">
-              Фитнес и движение <span class="blog-filter-btn__count">1</span>
+              Фитнес и движение <span class="blog-filter-btn__count">3</span>
             </button>
             <button class="blog-filter-btn" type="button" data-filter="massage" role="tab" aria-selected="false">
-              Массаж и релакс <span class="blog-filter-btn__count">1</span>
+              Массаж и релакс <span class="blog-filter-btn__count">2</span>
             </button>
           </div>
         </header>
@@ -111,15 +104,20 @@
           <!-- Article 1 -->
           <article class="blog-card blog-card--catalog" data-category="synergy" aria-labelledby="blog-cat-1">
             <div class="blog-card__image-wrap">
+              <picture>
+                <source type="image/avif" srcset="Assets/optimized/recovery-400.avif 400w, Assets/optimized/recovery-720.avif 720w" sizes="(max-width: 767px) 100vw, 50vw" />
               <img
                 class="blog-card__image"
-                src="Assets/vosstan.jpeg"
-                width="800"
-                height="500"
+                src="Assets/optimized/recovery-720.webp"
+                srcset="Assets/optimized/recovery-400.webp 400w, Assets/optimized/recovery-720.webp 720w"
+                sizes="(max-width: 767px) 100vw, 50vw"
+                width="720"
+                height="402"
                 alt="Процесс восстановления и заботы о теле"
                 loading="lazy"
                 decoding="async"
               />
+              </picture>
               <div class="blog-card__badge-row">
                 <span class="blog-card__tag blog-card__tag--synergy">Комплексный подход</span>
                 <span class="blog-card__read-time">5 мин чтения</span>
@@ -129,11 +127,11 @@
               <time class="blog-card__date" datetime="2026-08-28">28 августа 2026</time>
               <h2 class="blog-card__title" id="blog-cat-1">
                 <a href="article-massage-recovery.html" class="blog-card__title-link">
-                  Два направления — одно тело: почему массаж необходим при регулярных тренировках
+                  Два направления — одно тело: как массаж дополняет регулярные тренировки
                 </a>
               </h2>
               <p class="blog-card__excerpt">
-                Как сочетание тренировок и массажа помогает мышцам восстанавливать гибкость, снимает скованность и защищает от накопленного переутомления.
+                Что известно о массаже после нагрузки и почему он не заменяет сон, питание и разумный тренировочный ритм.
               </p>
               <div class="blog-card__footer">
                 <a href="article-massage-recovery.html" class="blog-card__cta" aria-label="Читать статью о комплексном подходе">
@@ -150,15 +148,20 @@
           <!-- Article 2 -->
           <article class="blog-card blog-card--catalog" data-category="fitness" aria-labelledby="blog-cat-2">
             <div class="blog-card__image-wrap">
+              <picture>
+                <source type="image/avif" srcset="Assets/optimized/fitness-blog-400.avif 400w, Assets/optimized/fitness-blog-720.avif 720w" sizes="(max-width: 767px) 100vw, 50vw" />
               <img
                 class="blog-card__image"
-                src="Assets/dvizhenie.png"
-                width="800"
-                height="500"
+                src="Assets/optimized/fitness-blog-720.webp"
+                srcset="Assets/optimized/fitness-blog-400.webp 400w, Assets/optimized/fitness-blog-720.webp 720w"
+                sizes="(max-width: 767px) 100vw, 50vw"
+                width="720"
+                height="402"
                 alt="Мягкий фитнес и осанка"
                 loading="lazy"
                 decoding="async"
               />
+              </picture>
               <div class="blog-card__badge-row">
                 <span class="blog-card__tag blog-card__tag--fitness">Фитнес</span>
                 <span class="blog-card__read-time">4 мин чтения</span>
@@ -168,11 +171,11 @@
               <time class="blog-card__date" datetime="2026-08-15">15 августа 2026</time>
               <h2 class="blog-card__title" id="blog-cat-2">
                 <a href="article-mindful-fitness.html" class="blog-card__title-link">
-                  Мягкий фитнес: пилатес, стрейчинг и осознанная работа с осанкой
+                  Мягкий фитнес: пилатес, стрейчинг, Port de Bras и боди-балет
                 </a>
               </h2>
               <p class="blog-card__excerpt">
-                Почему бережная работа с глубокими постуральными мышцами и мобильностью суставов даёт устойчивый тонус без переутомления и стресса.
+                Чем отличаются мягкие форматы, как постепенно вернуться к занятиям и чего тренировки не могут гарантировать.
               </p>
               <div class="blog-card__footer">
                 <a href="article-mindful-fitness.html" class="blog-card__cta" aria-label="Читать статью о мягком фитнесе">
@@ -189,15 +192,20 @@
           <!-- Article 3 -->
           <article class="blog-card blog-card--catalog" data-category="massage" aria-labelledby="blog-cat-3">
             <div class="blog-card__image-wrap">
+              <picture>
+                <source type="image/avif" srcset="Assets/optimized/massage-blog-400.avif 400w, Assets/optimized/massage-blog-720.avif 720w" sizes="(max-width: 767px) 100vw, 50vw" />
               <img
                 class="blog-card__image"
-                src="Assets/massage-section.png"
-                width="800"
-                height="500"
+                src="Assets/optimized/massage-blog-720.webp"
+                srcset="Assets/optimized/massage-blog-400.webp 400w, Assets/optimized/massage-blog-720.webp 720w"
+                sizes="(max-width: 767px) 100vw, 50vw"
+                width="720"
+                height="568"
                 alt="Лимфодренажный и расслабляющий массаж"
                 loading="lazy"
                 decoding="async"
               />
+              </picture>
               <div class="blog-card__badge-row">
                 <span class="blog-card__tag blog-card__tag--massage">Массаж</span>
                 <span class="blog-card__read-time">4 мин чтения</span>
@@ -207,11 +215,11 @@
               <time class="blog-card__date" datetime="2026-08-04">4 августа 2026</time>
               <h2 class="blog-card__title" id="blog-cat-3">
                 <a href="article-lymphatic-drainage.html" class="blog-card__title-link">
-                  Лимфодренажный и расслабляющий массаж: как снять напряжение и усталость
+                  Лимфодренажный и расслабляющий массаж: в чём разница
                 </a>
               </h2>
               <p class="blog-card__excerpt">
-                Как бережные массажные техники помогают улучшить циркуляцию, снижают чувство скованности и возвращают телу ощущение лёгкости.
+                Различия форматов, ограниченность доказательств и вопросы, которые важно обсудить перед записью.
               </p>
               <div class="blog-card__footer">
                 <a href="article-lymphatic-drainage.html" class="blog-card__cta" aria-label="Читать статью о лимфодренаже и релаксе">
@@ -223,6 +231,21 @@
                 </a>
               </div>
             </div>
+          </article>
+
+          <article class="blog-card blog-card--catalog" data-category="fitness" aria-labelledby="blog-cat-4">
+            <div class="blog-card__image-wrap"><picture><source type="image/avif" srcset="Assets/optimized/movement-480.avif 480w, Assets/optimized/movement-768.avif 768w" sizes="(max-width: 767px) 100vw, 50vw" /><img class="blog-card__image" src="Assets/optimized/movement-768.webp" srcset="Assets/optimized/movement-480.webp 480w, Assets/optimized/movement-768.webp 768w" sizes="(max-width: 767px) 100vw, 50vw" width="768" height="432" alt="Выбор формата фитнес-тренировки" loading="lazy" decoding="async" /></picture><div class="blog-card__badge-row"><span class="blog-card__tag blog-card__tag--fitness">Фитнес</span><span class="blog-card__read-time">6 мин чтения</span></div></div>
+            <div class="blog-card__content"><time class="blog-card__date" datetime="2026-09-11">11 сентября 2026</time><h2 class="blog-card__title" id="blog-cat-4"><a href="article-fitness-intensity.html" class="blog-card__title-link">Как выбрать формат фитнеса: от пилатеса до табаты</a></h2><p class="blog-card__excerpt">Ориентиры по интенсивности, постепенному старту и выбору занятия, к которому хочется возвращаться.</p><div class="blog-card__footer"><a href="article-fitness-intensity.html" class="blog-card__cta" aria-label="Читать статью о выборе фитнес-формата"><span>Читать статью</span></a></div></div>
+          </article>
+
+          <article class="blog-card blog-card--catalog" data-category="fitness" aria-labelledby="blog-cat-5">
+            <div class="blog-card__image-wrap"><picture><source type="image/avif" srcset="Assets/optimized/fitness-blog-400.avif 400w, Assets/optimized/fitness-blog-720.avif 720w" sizes="(max-width: 767px) 100vw, 50vw" /><img class="blog-card__image" src="Assets/optimized/fitness-blog-720.webp" srcset="Assets/optimized/fitness-blog-400.webp 400w, Assets/optimized/fitness-blog-720.webp 720w" sizes="(max-width: 767px) 100vw, 50vw" width="720" height="402" alt="Стрейчинг и работа с диапазоном движения" loading="lazy" decoding="async" /></picture><div class="blog-card__badge-row"><span class="blog-card__tag blog-card__tag--fitness">Фитнес</span><span class="blog-card__read-time">5 мин чтения</span></div></div>
+            <div class="blog-card__content"><time class="blog-card__date" datetime="2026-09-11">11 сентября 2026</time><h2 class="blog-card__title" id="blog-cat-5"><a href="article-stretching-mobility.html" class="blog-card__title-link">Стрейчинг и мобильность без мифов</a></h2><p class="blog-card__excerpt">Что растяжка действительно меняет, как сочетать её с разминкой и почему боль не является целью.</p><div class="blog-card__footer"><a href="article-stretching-mobility.html" class="blog-card__cta" aria-label="Читать статью о стрейчинге"><span>Читать статью</span></a></div></div>
+          </article>
+
+          <article class="blog-card blog-card--catalog" data-category="massage" aria-labelledby="blog-cat-6">
+            <div class="blog-card__image-wrap"><picture><source type="image/avif" srcset="Assets/optimized/massage-blog-400.avif 400w, Assets/optimized/massage-blog-720.avif 720w" sizes="(max-width: 767px) 100vw, 50vw" /><img class="blog-card__image" src="Assets/optimized/massage-blog-720.webp" srcset="Assets/optimized/massage-blog-400.webp 400w, Assets/optimized/massage-blog-720.webp 720w" sizes="(max-width: 767px) 100vw, 50vw" width="720" height="568" alt="Спортивный массаж после нагрузки" loading="lazy" decoding="async" /></picture><div class="blog-card__badge-row"><span class="blog-card__tag blog-card__tag--massage">Массаж</span><span class="blog-card__read-time">5 мин чтения</span></div></div>
+            <div class="blog-card__content"><time class="blog-card__date" datetime="2026-09-11">11 сентября 2026</time><h2 class="blog-card__title" id="blog-cat-6"><a href="article-sports-massage.html" class="blog-card__title-link">Спортивный массаж после тренировки: ожидания без обещаний</a></h2><p class="blog-card__excerpt">Что показывают обзоры о крепатуре, гибкости и спортивных результатах — без преувеличений.</p><div class="blog-card__footer"><a href="article-sports-massage.html" class="blog-card__cta" aria-label="Читать статью о спортивном массаже"><span>Читать статью</span></a></div></div>
           </article>
         </div>
 
@@ -249,7 +272,7 @@
     </main>
 
     <footer class="site-footer">
-      <a class="footer-brand" href="index.html#hero" aria-label="Светлана — на главную">
+      <a class="footer-brand" href="index.html#hero" aria-label="Светлана Фитнес × массаж — на главную">
         <svg
           class="footer-brand__symbol"
           viewBox="0 0 296.29 172.31"
@@ -282,7 +305,7 @@
         <a href="index.html#faq">FAQ</a>
       </nav>
 
-      <div class="footer-socials" aria-label="Социальные сети и мессенджеры">
+      <div class="footer-socials" role="group" aria-label="Социальные сети и мессенджеры">
         <a href="https://www.instagram.com/love_to_sport_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Светланы о фитнесе">
           <svg class="footer-socials__icon footer-socials__icon--instagram" viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" />
@@ -290,18 +313,19 @@
             <circle class="footer-socials__dot" cx="17.55" cy="6.55" r="1.05" />
           </svg>
         </a>
-        <button type="button" data-contact-open aria-label="Написать Светлане в Telegram">
-          <svg class="footer-socials__icon footer-socials__icon--telegram" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.45 3.72 3.92 10.1c-1.13.45-1.12 1.08-.2 1.36l4.24 1.32 1.63 5.04c.2.57.1.8.7.8.47 0 .68-.21.94-.46l2.04-1.98 4.25 3.14c.78.43 1.34.21 1.54-.73l2.79-13.16c.28-1.14-.44-1.66-1.4-1.22Z" />
-            <path d="m8.25 12.63 9.55-6.02-7.88 7.3-.3 3.68" />
+        <a href="https://www.instagram.com/massage_svet_pmr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Светланы о массаже">
+          <svg class="footer-socials__icon footer-socials__icon--instagram" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" />
+            <circle cx="12" cy="12" r="4.05" />
+            <circle class="footer-socials__dot" cx="17.55" cy="6.55" r="1.05" />
           </svg>
-        </button>
-        <button type="button" data-contact-open aria-label="Написать Светлане в WhatsApp">
+        </a>
+        <a href="https://wa.me/37377560512" target="_blank" rel="noopener noreferrer" aria-label="Написать Светлане в WhatsApp">
           <svg class="footer-socials__icon footer-socials__icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.35 11.7a8.3 8.3 0 0 1-12.28 7.28L3.7 20.12l1.17-4.23A8.3 8.3 0 1 1 20.35 11.7Z" />
             <path d="M9.18 7.56c.2-.48.42-.5.72-.5h.38c.12 0 .3.04.4.31l.72 1.75c.08.2.04.37-.08.54l-.55.7c-.15.17-.12.34-.02.5.44.75 1.05 1.39 1.8 1.87.2.13.38.1.53-.08l.78-.9c.15-.17.34-.2.54-.11l1.67.8c.22.1.36.16.4.27.05.12.05.66-.15 1.28-.2.63-1.2 1.2-1.67 1.26-.43.06-.98.09-1.58-.1-.36-.11-.83-.27-1.42-.53-2.5-1.08-4.13-3.6-4.25-3.77-.13-.17-1.02-1.36-1.02-2.6 0-1.23.64-1.84.8-2.06Z" />
           </svg>
-        </button>
+        </a>
       </div>
 
       <p class="site-footer__copyright">© <span data-current-year></span> Светлана · Фитнес × массаж</p>
@@ -316,14 +340,14 @@
           </svg>
         </button>
 
-        <header class="contact-dialog__header">
+        <div class="contact-dialog__header">
           <p class="contact-dialog__kicker">
             <span class="contact-dialog__kicker-dot" aria-hidden="true"></span>
             Связаться со Светланой
           </p>
           <h2 class="contact-dialog__title" id="contact-title">Напишите Светлане</h2>
           <p class="contact-dialog__copy">
-            Выберите привычный мессенджер или позвоните напрямую. Обсудим задачи, подберем формат и согласуем время.
+            Напишите в WhatsApp или Instagram либо позвоните напрямую. Обсудим задачи, подберём формат и согласуем время.
           </p>
           <div class="contact-dialog__location">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -332,22 +356,9 @@
             </svg>
             <span>Тирасполь · 2 локации</span>
           </div>
-        </header>
+        </div>
 
-        <div class="contact-channels" aria-label="Быстрый переход в мессенджер">
-          <a href="https://t.me/+37377560512" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--telegram">
-            <div class="contact-channel__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M20.45 3.72 3.92 10.1c-1.13.45-1.12 1.08-.2 1.36l4.24 1.32 1.63 5.04c.2.57.1.8.7.8.47 0 .68-.21.94-.46l2.04-1.98 4.25 3.14c.78.43 1.34.21 1.54-.73l2.79-13.16c.28-1.14-.44-1.66-1.4-1.22Z" />
-                <path d="m8.25 12.63 9.55-6.02-7.88 7.3-.3 3.68" />
-              </svg>
-            </div>
-            <div class="contact-channel__info">
-              <span class="contact-channel__name">Telegram</span>
-              <span class="contact-channel__hint">Написать в чат</span>
-            </div>
-          </a>
-
+        <div class="contact-channels" role="group" aria-label="Способы связаться со Светланой">
           <a href="https://wa.me/37377560512" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--whatsapp">
             <div class="contact-channel__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -361,15 +372,31 @@
             </div>
           </a>
 
-          <a href="viber://chat?number=%2B37377560512" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--viber">
+          <a href="https://www.instagram.com/love_to_sport_/" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--instagram">
             <div class="contact-channel__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M19.78 15.6c-.66-1.08-1.54-1.78-2.34-1.28-.46.28-.9.64-1.34 1-.22.18-.46.2-.72.06-.96-.5-1.9-1.12-2.72-1.86-.82-.74-1.5-1.6-2.06-2.52-.16-.26-.14-.48.06-.72.36-.42.7-.84.98-1.3.5-.8-.16-1.74-1.2-2.42C9.5 5.9 8.64 5.34 7.9 6c-.84.76-1.2 1.7-1.06 2.8.28 2.2 1.34 4.14 2.76 5.84 1.76 2.1 3.92 3.6 6.44 4.4 1.28.4 2.5.24 3.48-.7.76-.74.42-1.76.26-2.74zM16.5 2.5c2.9 0 5.4 1.2 7.3 3.1 1.9 1.9 3.1 4.4 3.1 7.3h-2c0-2.3-.9-4.4-2.5-6-1.6-1.6-3.7-2.5-6-2.5v-1.9z"/>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" />
+                <circle cx="12" cy="12" r="4.05" />
+                <circle cx="17.55" cy="6.55" r="1.05" fill="currentColor" stroke="none" />
               </svg>
             </div>
             <div class="contact-channel__info">
-              <span class="contact-channel__name">Viber</span>
-              <span class="contact-channel__hint">Написать в чат</span>
+              <span class="contact-channel__name">Instagram · фитнес</span>
+              <span class="contact-channel__hint">Открыть профиль</span>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/massage_svet_pmr" target="_blank" rel="noopener noreferrer" class="contact-channel contact-channel--instagram">
+            <div class="contact-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" />
+                <circle cx="12" cy="12" r="4.05" />
+                <circle cx="17.55" cy="6.55" r="1.05" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div class="contact-channel__info">
+              <span class="contact-channel__name">Instagram · массаж</span>
+              <span class="contact-channel__hint">Открыть профиль</span>
             </div>
           </a>
         </div>
@@ -377,16 +404,16 @@
         <div class="contact-phone-card">
           <div class="contact-phone-card__details">
             <span class="contact-phone-card__label">Прямой номер</span>
-            <a href="tel:077560512" class="contact-phone-card__number">0775 605 12</a>
+            <a href="tel:+37377560512" class="contact-phone-card__number">+37377560512</a>
           </div>
           <div class="contact-phone-card__actions">
-            <a href="tel:077560512" class="contact-phone-btn contact-phone-btn--call" aria-label="Позвонить по номеру 0775 605 12">
+            <a href="tel:+37377560512" class="contact-phone-btn contact-phone-btn--call" aria-label="Позвонить по номеру +37377560512">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
               <span>Позвонить</span>
             </a>
-            <button type="button" class="contact-phone-btn contact-phone-btn--copy" data-copy-number data-number="0775 605 12" aria-label="Скопировать номер телефона">
+            <button type="button" class="contact-phone-btn contact-phone-btn--copy" data-copy-number data-number="+37377560512" aria-label="Скопировать номер телефона">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
