@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fitnessvetik.netlify.app/sitemap.xml
